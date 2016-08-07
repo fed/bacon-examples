@@ -1,7 +1,5 @@
 import React from 'react';
-
-import Counter from './counter';
-import Keyboard from './keyboard';
+import {Link} from 'react-router';
 
 export default class App extends React.Component {
   render() {
@@ -10,15 +8,18 @@ export default class App extends React.Component {
         <nav className="navigation">
           <h1>Functional Reactive Programming Examples using <a href="https://baconjs.github.io/" target="_blank">Bacon.js</a></h1>
           <ul>
-            <li>Counter</li>
-            <li>Keyboard</li>
+            <li><Link to="/counter">Counter</Link></li>
+            <li><Link to="/keyboard">Keyboard</Link></li>
           </ul>
         </nav>
         <div className="container">
-          <Counter />
-          <Keyboard />
+          {this.props.children}
         </div>
       </div>
     );
   }
 }
+
+App.propTypes = {
+  children: React.PropTypes.object
+};

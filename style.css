@@ -6,7 +6,7 @@ html {
 }
 
 a {
-  color: #056CC1;
+  color: #056cc1;
 }
 
 .example {
@@ -26,22 +26,33 @@ a {
 }
 
 .navigation {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .navigation ul {
-  margin: 0;
   padding: 0;
 }
 
 .navigation li {
-  background-color: #00253c;
-  color: #fff;
   display: inline-block;
-  padding: 15px 20px;
   margin-right: 1px;
 }
 
-.navigation li:hover {
-  background-color: #C4204B;
+.navigation li a {
+  background-color: #00253c;
+  color: #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navigation li a:hover {
+  background-color: #C4204b;
+}
+
+.error {
+  background-color: #C4204b;
+  color: #fff;
+  font-weight: bold;
+  padding: 20px;
 }

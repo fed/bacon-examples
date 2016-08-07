@@ -7,7 +7,8 @@ module.exports = {
   },
   devServer: {
     inline: true,
-    publicPath: '/dist/'
+    publicPath: '/dist/',
+    historyApiFallback: true
   },
   module: {
     preLoaders: [
