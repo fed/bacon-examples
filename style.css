@@ -56,3 +56,7 @@ a {
   font-weight: bold;
   padding: 20px;
 }
+
+pre {
+  white-space: pre-wrap;
+}
