@@ -1,0 +1,33 @@
+{
+  "name": "bacon-examples",
+  "version": "0.0.0",
+  "description": "Functional Reactive Programming Examples using Bacon.js",
+  "author": "Federico Knüssel <fknussel@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fknussel/bacon-examples.git"
+  },
+  "scripts": {
+    "clean": "rimraf dist/",
+    "start": "webpack-dev-server --port 6789",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "baconjs": "^0.7.85",
+    "eslint": "^3.2.0",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-react": "^5.2.2",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "rimraf": "^2.5.4",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
