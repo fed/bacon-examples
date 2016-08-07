@@ -18,7 +18,7 @@ export default class Counter extends React.Component {
     return (
       <section className="example">
         <h1>Counter</h1>
-        <div id="result"></div>
+        <pre><code id="result"></code></pre>
         <button id="up">Up</button>
         <button id="down">Down</button>
       </section>

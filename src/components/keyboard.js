@@ -36,7 +36,7 @@ export default class Keyboard extends React.Component {
       <section className="example">
         <h1>Keyboard</h1>
         <p>Hold the "space" key and see the output on the log.</p>
-        <code id="log"></code>
+        <pre><code id="log"></code></pre>
       </section>
     );
   }
