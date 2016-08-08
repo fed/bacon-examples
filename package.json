@@ -10,12 +10,12 @@
   },
   "scripts": {
     "clean": "rimraf dist/",
-    "start": "webpack-dev-server --port 6789",
-    "build": "webpack",
+    "build": "npm run clean && webpack",
+    "start": "npm run build && node server.js",
+    "dev": "webpack-dev-server --port 6789",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "axios": "^0.13.1",
     "babel-core": "^6.11.4",
     "babel-loader": "^6.2.4",
@@ -25,6 +25,7 @@
     "eslint": "^3.2.0",
     "eslint-loader": "^1.5.0",
     "eslint-plugin-react": "^5.2.2",
+    "express": "^4.14.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-router": "^2.6.1",
