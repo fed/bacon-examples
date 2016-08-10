@@ -6,6 +6,7 @@ import App from './components/app';
 import Counter from './components/counter';
 import Keyboard from './components/keyboard';
 import DoubleClick from './components/doubleClick';
+import UserDetails from './components/userDetails';
 import Movies from './components/movies';
 import NoMatch from './components/noMatch';
 
@@ -15,6 +16,7 @@ ReactDOM.render(
       <Route path="counter" component={Counter} />
       <Route path="keyboard" component={Keyboard} />
       <Route path="double-click" component={DoubleClick} />
+      <Route path="user-details" component={UserDetails} />
       <Route path="movies" component={Movies} />
       <Route path="*" component={NoMatch} />
     </Route>
