@@ -10,6 +10,7 @@ export default class App extends React.Component {
           <ul>
             <li><Link to="/counter">Counter</Link></li>
             <li><Link to="/keyboard">Keyboard</Link></li>
+            <li><Link to="/double-click">Double Click</Link></li>
             <li><Link to="/movies">Movies</Link></li>
           </ul>
         </nav>
