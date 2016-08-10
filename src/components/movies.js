@@ -41,7 +41,7 @@ export default class Movies extends React.Component {
       .onValue((results) => {
         const parsedMovies = results.map((movie) => movie.title);
 
-        document.querySelector('#results').textContent = parsedMovies;
+        document.querySelector('#results').textContent = parsedMovies.join(', ');
       });
   }
 
@@ -49,6 +49,7 @@ export default class Movies extends React.Component {
     return (
       <section className="example">
         <h1>Ajax</h1>
+        <p>Search for a movie by name:</p>
         <input type="text" id="input" placeholder="Enter a movie name" />
         <pre><code id="results"></code></pre>
       </section>
