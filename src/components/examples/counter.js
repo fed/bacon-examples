@@ -3,13 +3,12 @@ import Bacon from 'baconjs';
 
 export default class Counter extends React.Component {
   componentDidMount() {
-    const upButtonStream = Bacon.fromEvent(document.querySelector('#up'), 'click');
-    const downButtonStream = Bacon.fromEvent(document.querySelector('#down'), 'click');
+    const upButtonStream = Bacon.fromEvent(document.querySelector('#up'), 'click').map(1);
+    const downButtonStream = Bacon.fromEvent(document.querySelector('#down'), 'click').map(-1);
     const initialState = 0;
 
     upButtonStream
-      .map(1)
-      .merge(downButtonStream.map(-1))
+      .merge(downButtonStream)
       .scan(initialState, (x,y) => x + y)
       .onValue((value) => document.querySelector('#result').textContent = value);
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import Bacon from 'baconjs';
 import axios from 'axios';
 
-import {MOVIE_API} from '../utils/constants';
+import {MOVIE_API} from '../../utils/constants';
 
 export default class Movies extends React.Component {
   componentDidMount() {

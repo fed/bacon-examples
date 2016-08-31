@@ -2,7 +2,7 @@ import React from 'react';
 import Bacon from 'baconjs';
 import axios from 'axios';
 
-import {USER_API} from '../utils/constants';
+import {USER_API} from '../../utils/constants';
 
 export default class UserDetails extends React.Component {
   componentDidMount() {

@@ -6,11 +6,12 @@ export default class App extends React.Component {
     return (
       <div>
         <nav className="navigation">
-          <h1>Functional Reactive Programming Examples using <a href="https://baconjs.github.io/" target="_blank">Bacon.js</a></h1>
+          <h1>Functional Reactive Programming Examples using <a href="https://baconjs.github.io/">Bacon.js</a></h1>
           <ul>
             <li><Link to="/counter">Counter</Link></li>
             <li><Link to="/keyboard">Keyboard</Link></li>
             <li><Link to="/double-click">Double Click</Link></li>
+            <li><Link to="/spreadsheet">Spreadsheet</Link></li>
             <li><Link to="/user-details">User Details</Link></li>
             <li><Link to="/movies">Movies</Link></li>
           </ul>
