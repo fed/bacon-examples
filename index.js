@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, browserHistory} from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 
 import App from './components/app';
-import Counter from './components/examples/counter';
-import Keyboard from './components/examples/keyboard';
-import DoubleClick from './components/examples/doubleClick';
-import Spreadsheet from './components/examples/spreadsheet';
-import UserDetails from './components/examples/userDetails';
-import Movies from './components/examples/movies';
+import Counter from './components/counter';
+import Keyboard from './components/keyboard';
+import DoubleClick from './components/doubleClick';
+import Spreadsheet from './components/spreadsheet';
+import UserDetails from './components/userDetails';
+import Movies from './components/movies';
 import NoMatch from './components/noMatch';
 
 ReactDOM.render(
@@ -23,5 +23,5 @@ ReactDOM.render(
       <Route path="*" component={NoMatch} />
     </Route>
   </Router>,
-  document.getElementById('app')
+  document.getElementById('root')
 );

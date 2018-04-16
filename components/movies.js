@@ -2,22 +2,20 @@ import React from 'react';
 import Bacon from 'baconjs';
 import axios from 'axios';
 
-import {MOVIE_API} from '../../utils/constants';
+export const MOVIE_API = '//api.themoviedb.org/3/search/movie?api_key=9eae05e667b4d5d9fbb75d27622347fe&query=';
 
 export default class Movies extends React.Component {
   componentDidMount() {
-    const getResults = (query) => {
-      return axios
-        .get(MOVIE_API + query)
-        .then((response) => response.data.results);
+    const getResults = query => {
+      return axios.get(MOVIE_API + query).then(response => response.data.results);
     };
 
     const inputStream = Bacon.fromEvent(document.querySelector('#input'), 'keydown')
       .debounce(300) // limit the rate of queries
-      .map((event) => event.target.value) // get input text value from each event
+      .map(event => event.target.value) // get input text value from each event
       .skipDuplicates(); // ignore duplicate events with same text
 
-    const movieSearch = (query) => {
+    const movieSearch = query => {
       if (query.length < 3) {
         return Bacon.once([]);
       }
@@ -28,21 +26,18 @@ export default class Movies extends React.Component {
     const suggestions = inputStream.flatMapLatest(movieSearch);
 
     // Display "Searching..." when waiting for results
-    inputStream
-      .awaiting(suggestions)
-      .onValue((x) => {
-        if (x) {
-          document.querySelector('#results').textContent = 'Searching...';
-        }
-      });
+    inputStream.awaiting(suggestions).onValue(x => {
+      if (x) {
+        document.querySelector('#results').textContent = 'Searching...';
+      }
+    });
 
     // Render suggestion results to DOM
-    suggestions
-      .onValue((results) => {
-        const parsedMovies = results.map((movie) => movie.title);
+    suggestions.onValue(results => {
+      const parsedMovies = results.map(movie => movie.title);
 
-        document.querySelector('#results').textContent = parsedMovies.join(', ');
-      });
+      document.querySelector('#results').textContent = parsedMovies.join(', ');
+    });
   }
 
   render() {
@@ -51,7 +46,9 @@ export default class Movies extends React.Component {
         <h1>Ajax</h1>
         <p>Search for a movie by name:</p>
         <input type="text" id="input" placeholder="Enter a movie name" />
-        <pre><code id="results"></code></pre>
+        <pre>
+          <code id="results" />
+        </pre>
       </section>
     );
   }

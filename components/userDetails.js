@@ -2,7 +2,7 @@ import React from 'react';
 import Bacon from 'baconjs';
 import axios from 'axios';
 
-import {USER_API} from '../../utils/constants';
+export const USER_API = '//api.myjson.com/bins/4rfkl';
 
 export default class UserDetails extends React.Component {
   componentDidMount() {
@@ -12,13 +12,11 @@ export default class UserDetails extends React.Component {
     let lastName = userDataStream.map('.data.lastname');
     let email = userDataStream.map('.data.email');
 
-    firstName
-      .zip(lastName, (first, last) => `${first} ${last}`)
-      .onValue((data) => {
-        document.getElementById('fullname').textContent = data;
-      });
+    firstName.zip(lastName, (first, last) => `${first} ${last}`).onValue(data => {
+      document.getElementById('fullname').textContent = data;
+    });
 
-    email.onValue((data) => {
+    email.onValue(data => {
       document.getElementById('email').textContent = data;
     });
   }
@@ -29,8 +27,12 @@ export default class UserDetails extends React.Component {
         <h1>User Details</h1>
         <pre>
           <code>
-            <p>Name: <span id="fullname"></span></p>
-            <p>Email: <span id="email"></span></p>
+            <p>
+              Name: <span id="fullname" />
+            </p>
+            <p>
+              Email: <span id="email" />
+            </p>
           </code>
         </pre>
       </section>
