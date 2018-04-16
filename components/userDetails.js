@@ -12,9 +12,11 @@ export default class UserDetails extends React.Component {
     let lastName = userDataStream.map('.data.lastname');
     let email = userDataStream.map('.data.email');
 
-    firstName.zip(lastName, (first, last) => `${first} ${last}`).onValue(data => {
-      document.getElementById('fullname').textContent = data;
-    });
+    firstName
+      .zip(lastName, (first, last) => `${first} ${last}`)
+      .onValue(data => {
+        document.getElementById('fullname').textContent = data;
+      });
 
     email.onValue(data => {
       document.getElementById('email').textContent = data;

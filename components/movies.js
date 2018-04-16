@@ -2,15 +2,21 @@ import React from 'react';
 import Bacon from 'baconjs';
 import axios from 'axios';
 
-export const MOVIE_API = '//api.themoviedb.org/3/search/movie?api_key=9eae05e667b4d5d9fbb75d27622347fe&query=';
+export const MOVIE_API =
+  '//api.themoviedb.org/3/search/movie?api_key=9eae05e667b4d5d9fbb75d27622347fe&query=';
 
 export default class Movies extends React.Component {
   componentDidMount() {
     const getResults = query => {
-      return axios.get(MOVIE_API + query).then(response => response.data.results);
+      return axios
+        .get(MOVIE_API + query)
+        .then(response => response.data.results);
     };
 
-    const inputStream = Bacon.fromEvent(document.querySelector('#input'), 'keydown')
+    const inputStream = Bacon.fromEvent(
+      document.querySelector('#input'),
+      'keydown'
+    )
       .debounce(300) // limit the rate of queries
       .map(event => event.target.value) // get input text value from each event
       .skipDuplicates(); // ignore duplicate events with same text

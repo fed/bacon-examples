@@ -11,10 +11,10 @@ export default class Keyboard extends React.Component {
 
     // Filtered stream: from all keyups events, filter those which have a keyCode = 32 (space bar)
     const releasedStream = allKeyUps
-      .filter((event) => event.keyCode === 32)
+      .filter(event => event.keyCode === 32)
       .map(false);
     const pressedStream = allKeyDowns
-      .filter((event) => event.keyCode === 32)
+      .filter(event => event.keyCode === 32)
       .map(true);
 
     // This is an Observable object, meaning that you can listen to events
@@ -22,7 +22,7 @@ export default class Keyboard extends React.Component {
     releasedStream
       .merge(pressedStream)
       .toProperty(false)
-      .onValue((pressed) => {
+      .onValue(pressed => {
         if (pressed) {
           log.textContent = 'Space is now pressed :)';
         } else {
@@ -36,7 +36,9 @@ export default class Keyboard extends React.Component {
       <section className="example">
         <h1>Keyboard</h1>
         <p>Hold the "space" key and see the output on the log.</p>
-        <pre><code id="log"></code></pre>
+        <pre>
+          <code id="log" />
+        </pre>
       </section>
     );
   }
