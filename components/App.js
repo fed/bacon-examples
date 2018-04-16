@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 import { Switch, Route, Redirect, Link } from 'react-router-dom';
-import Counter from './counter';
-import Keyboard from './keyboard';
-import DoubleClick from './doubleClick';
-import Spreadsheet from './spreadsheet';
-import UserDetails from './userDetails';
-import Movies from './movies';
-import NoMatch from './noMatch';
+import Counter from './Counter';
+import Keyboard from './Keyboard';
+import DoubleClick from './DoubleClick';
+import Spreadsheet from './Spreadsheet';
+import UserDetails from './UserDetails';
+import Movies from './Movies';
+import NoMatch from './NoMatch';
 
 export default function App() {
   return (
