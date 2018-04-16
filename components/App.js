@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Switch, Route, Redirect, Link } from 'react-router-dom';
+import { Switch, Route, Redirect, NavLink } from 'react-router-dom';
 import Counter from './Counter';
 import Keyboard from './Keyboard';
 import DoubleClick from './DoubleClick';
@@ -8,11 +8,20 @@ import UserDetails from './UserDetails';
 import Movies from './Movies';
 import NoMatch from './NoMatch';
 
+const examples = [
+  { title: 'Counter', link: '/counter' },
+  { title: 'Keyboard', link: '/keyboard' },
+  { title: 'Double Click', link: '/double-click' },
+  { title: 'Spreadsheet', link: '/spreadsheet' },
+  { title: 'User Details (Ajax)', link: '/user-details' },
+  { title: 'Movies (Typeahead Search)', link: '/movies' }
+];
+
 export default function App() {
   return (
     <Fragment>
-      <nav className="navigation">
-        <h1>
+      <header>
+        <h1 class="heading">
           Functional Reactive Programming Examples using{' '}
           <a
             href="https://baconjs.github.io/"
@@ -22,27 +31,23 @@ export default function App() {
             Bacon.js
           </a>
         </h1>
-        <ul>
-          <li>
-            <Link to="/counter">Counter</Link>
-          </li>
-          <li>
-            <Link to="/keyboard">Keyboard</Link>
-          </li>
-          <li>
-            <Link to="/double-click">Double Click</Link>
-          </li>
-          <li>
-            <Link to="/spreadsheet">Spreadsheet</Link>
-          </li>
-          <li>
-            <Link to="/user-details">User Details</Link>
-          </li>
-          <li>
-            <Link to="/movies">Movies</Link>
-          </li>
-        </ul>
-      </nav>
+
+        <nav className="navigation">
+          <ul className="navigation__list">
+            {examples.map(example => (
+              <li className="navigation__list-option" key={example.link}>
+                <NavLink
+                  to={example.link}
+                  className="navigation__link"
+                  activeClassName="navigation__link--active"
+                >
+                  {example.title}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </header>
 
       <div className="container">
         <Switch>

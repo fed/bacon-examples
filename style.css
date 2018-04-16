@@ -9,6 +9,10 @@ a {
   color: #056cc1;
 }
 
+pre {
+  white-space: pre-wrap;
+}
+
 .example {
   background-color: #f7f7f7;
   border: 1px solid #ccc;
@@ -25,22 +29,27 @@ a {
   padding: 10px 15px;
 }
 
-.navigation {
-  margin-bottom: 30px;
+.heading {
+  font-size: 25px;
+  margin: 0 0 20px;
 }
 
-.navigation ul {
+.navigation {
+  margin-bottom: 20px;
+}
+
+.navigation__list {
   overflow-x: scroll;
   padding: 0;
   white-space: nowrap;
 }
 
-.navigation li {
+.navigation__list-option {
   display: inline-block;
   margin-right: 1px;
 }
 
-.navigation li a {
+.navigation__link {
   background-color: #00253c;
   color: #fff;
   display: inline-block;
@@ -49,7 +58,8 @@ a {
   text-decoration: none;
 }
 
-.navigation li a:hover {
+.navigation__link:hover,
+.navigation__link--active {
   background-color: #c4204b;
 }
 
@@ -58,8 +68,4 @@ a {
   color: #fff;
   font-weight: bold;
   padding: 20px;
-}
-
-pre {
-  white-space: pre-wrap;
 }
