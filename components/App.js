@@ -21,7 +21,7 @@ export default function App() {
   return (
     <Fragment>
       <header>
-        <h1 class="heading">
+        <h1 className="heading">
           Functional Reactive Programming Examples using{' '}
           <a
             href="https://baconjs.github.io/"
